@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gravewave - Acesso Restrito</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: #00ffcc;
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden;
+    }
+    .glitch-text {
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 30vh;
+      animation: glitch 2s infinite;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px red; }
+      25% { text-shadow: -2px -2px lime; }
+      50% { text-shadow: 2px -2px blue; }
+      75% { text-shadow: -2px 2px purple; }
+      100% { text-shadow: 2px 2px red; }
+    }
+    .center {
+      text-align: center;
+    }
+    .access-btn {
+      background: none;
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .access-btn:hover {
+      background: #00ffcc;
+      color: black;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <div class="glitch-text">[ Gravewave // Acesso Restrito ]</div>
+    <button class="access-btn" onclick="startAccess()">ACESSAR</button>
+    <audio id="introSound" src="gravewave-intro.mp3" autoplay loop></audio>
+  </div>
+
+  <script>
+    function startAccess() {
+      document.querySelector('.glitch-text').innerText = '[ Decodificando // Chamado Inicial ]';
+      const audio = document.getElementById('introSound');
+      audio.play();
+
+      setTimeout(() => {
+        window.location.href = "arquivo-proibido.html";
+      }, 6000);
+    }
+  </script>
+</body>
+</html>
